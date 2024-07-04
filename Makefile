@@ -15,3 +15,4 @@ auto-push:
 	@git add .
 	@git commit -m 'auto push from Makefile'
 	@git push
+	@echo "Pushed."
