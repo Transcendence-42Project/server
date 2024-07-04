@@ -11,6 +11,11 @@ up:
 	@sudo $(DC) up -d
 	@echo "Docker started."
 
+re:
+	@sudo $(DC) down
+	@sudo $(DC) up -d
+	@echo "Docker restarted."
+
 auto-push:
 	@git add .
 	@git commit -m 'auto push from Makefile'

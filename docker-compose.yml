@@ -1,8 +1,11 @@
 version: '3.8'
 
 services:
+
   debian:
-    image: debian:latest
+    build:
+      context: .
+      dockerfile: requirements/debian/Dockerfile
     volumes:
       - ./volumes/debian:/root
     tty: true
