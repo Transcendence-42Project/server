@@ -5,7 +5,13 @@ all:
 
 down:
 	@sudo $(DC) down
-	@echo "docker stoped."
+	@echo "Docker stopped."
 
 up:
 	@sudo $(DC) up -d
+	@echo "Docker started."
+
+auto-push:
+	@git add .
+	@git commit -m 'auto push from Makefile'
+	@git push
