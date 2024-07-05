@@ -4,14 +4,14 @@ all:
 	@echo "commands: 'make up', 'make down', 'make re' and 'make rebuild'"
 
 update-submodule:
-    @git submodule update --init --recursive
+	@git submodule update --init --recursive
+	@git submodule foreach git pull origin main 
 	@echo "Submodules up to date."
 
-# -v
 down:
 	@sudo $(DC) down
 	@echo "Docker stopped."
- 
+
 up: update-submodule
 	@sudo $(DC) up -d
 	@echo "Docker started."
@@ -25,7 +25,7 @@ rebuild: update-submodule
 	@sudo $(DC) down
 	@sudo $(DC) build
 	@sudo $(DC) up -d
-	@echo "Docker rebuilded."
+	@echo "Docker rebuilt."
 
 auto-push:
 	@git add .
