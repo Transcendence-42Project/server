@@ -1,7 +1,7 @@
 DC := docker-compose -f ./docker-compose.yml
 
 all:
-	@echo "commands: 'make up' and 'make down'"
+	@echo "commands: 'make up', 'make down' and 'make rebuild'"
 
 down:
 	@sudo $(DC) down
@@ -11,10 +11,11 @@ up:
 	@sudo $(DC) up -d
 	@echo "Docker started."
 
-re:
+rebuild:
 	@sudo $(DC) down
+	@sudo $(DC) build --no-cache 
 	@sudo $(DC) up -d
-	@echo "Docker restarted."
+	@echo "Docker rebuildedmake."
 
 auto-push:
 	@git add .

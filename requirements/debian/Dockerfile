@@ -1,6 +1,6 @@
 FROM debian:latest
 
-WORKDIR /app/src
+WORKDIR /server/src
 
 RUN apt-get update && apt-get install -y \
     python3 \
@@ -8,10 +8,12 @@ RUN apt-get update && apt-get install -y \
     python3-venv
 
 RUN python3 -m venv myenv
-RUN /bin/bash -c "source myenv/bin/activate && pip install --upgrade pip"
+
+# ÖNEMLİ!
+RUN . myenv/bin/activate && pip install --upgrade pip
 
 COPY requirements/debian/src/ .
 
-RUN pip3 install -r requirements.txt
+RUN . myenv/bin/activate && pip install -r requirements.txt
 
-# CMD ["python3", "test.py"]
+# CMD ["myenv/bin/python3", "test.py"]  
