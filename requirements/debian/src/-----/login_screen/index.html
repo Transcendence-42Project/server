@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Giriş Sayfası</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/login_screen/style.css">
 </head>
 <body>
   <div class="container">
@@ -24,7 +24,7 @@
     </select>
 
     <h2><span id="loginTitle">Giriş Yap</span></h2>
-    <form>
+    <form id="loginForm">
       <label for="username"><span id="usernameLabel">Kullanıcı Adı:</span></label>
       <input type="text" id="username" name="username" required><br><br>
 
@@ -35,6 +35,12 @@
     </form>
   </div>
 
-  <script src="language.js"></script>
+  <script src="/login_screen/language.js"></script>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      window.location.href = '/game/index.html';
+    });
+  </script>
 </body>
 </html>

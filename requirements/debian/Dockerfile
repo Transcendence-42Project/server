@@ -1,13 +1,13 @@
 FROM debian:latest
 
-WORKDIR /server/src
+WORKDIR /server/src/backend
 
-#RUN apt-get update && apt-get install -y \
+# RUN apt-get update && apt-get install -y \
 #    python3 \
 #    python3-pip \
 #    python3-venv
 
-#RUN python3 -m venv myenv
+# RUN python3 -m venv myenv
 
 # ÖNEMLİ!
 #RUN . myenv/bin/activate && pip install --upgrade pip
