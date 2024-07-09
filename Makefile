@@ -1,7 +1,7 @@
 DC := docker-compose -f ./docker-compose.yml
 
 all:
-	@echo "commands: 'make up' | 'make down' | 'make re' | 're-dontpull' | 'make rebuild'"
+	@echo "commands: 'make up' | 'make down' | 'make re' | 're-dontpull' | 'make rebuild' | 'make build'"
 
 update-submodule:
 	@git submodule update --init --recursive
@@ -25,6 +25,11 @@ re-dontpull:
 	@sudo $(DC) down
 	@sudo $(DC) up -d
 	@echo "Docker stopped and restarted."
+
+build: update-submodule
+	@sudo $(DC) build
+	@sudo $(DC) up -d
+	@echo "Docker built."
 
 rebuild: update-submodule
 	@sudo $(DC) down

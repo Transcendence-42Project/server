@@ -19,9 +19,9 @@ services:
       context: .
       dockerfile: requirements/nginx/Dockerfile
     ports:
-      - "443:443" # https için
+      - "443:443"
     volumes:
-      - ./requirements/debian/src:/server/src
+      - ./requirements/nginx/src:/usr/share/nginx/  # Frontend dosyaları için
       - ./requirements/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./requirements/nginx/ssl:/etc/nginx/ssl:ro # SSL
     networks:
@@ -38,6 +38,18 @@ services:
       - "5432:5432"
     networks:
       - main-network
+
+  # pgadmin:
+  #   image: dpage/pgadmin4
+  #   environment:
+  #     PGADMIN_DEFAULT_EMAIL: pgadmin@42transendence.online 
+  #     PGADMIN_DEFAULT_PASSWORD: 1234
+  #   ports:
+  #     - "5050:80"
+  #   networks:
+  #     - main-network
+  #   depends_on:
+  #     - postgresql
 
 networks:
   main-network:
