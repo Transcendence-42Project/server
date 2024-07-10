@@ -14,6 +14,8 @@ WORKDIR /server/src/backend
 
 COPY requirements/debian/src/ .
 
+RUN npm install -g json-server 
+
 #RUN . myenv/bin/activate && pip install -r requirements.txt
 
 # CMD ["myenv/bin/python3", "test.py"]  
