@@ -4,3 +4,6 @@
 [submodule "requirements/nginx/src"]
 	path = requirements/nginx/src
 	url = https://github.com/Transcendence-42Project/Frontend
+[submodule "frontend"] 
+  path = frontend
+  url = https://github.com/Transcendence-42Project/Frontend
