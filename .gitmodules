@@ -1,6 +1,3 @@
 [submodule "requirements/debian/src"]
 	path = requirements/debian/src
 	url = https://github.com/Transcendence-42Project/Backend
-[submodule "requirements/nginx/src"]
-	path = frontend
-	url = https://github.com/Transcendence-42Project/Frontend
