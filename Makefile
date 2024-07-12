@@ -4,8 +4,7 @@ all:
 	@echo "commands: 'make up' | 'make down' | 'make re' | 're-dontpull' | 'make rebuild' | 'make build'"
 
 update-submodule:
-	@git submodule update --init --recursive
-	@git submodule foreach git pull origin main 
+	@git submodule update --init --recursive --remote
 	@echo "Submodules up to date."
 
 down:
