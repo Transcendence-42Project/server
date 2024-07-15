@@ -4,6 +4,7 @@ services:
 
   debian:
     container_name: debian
+    image: debian:latest
     build:
       context: .
       dockerfile: requirements/debian/Dockerfile
